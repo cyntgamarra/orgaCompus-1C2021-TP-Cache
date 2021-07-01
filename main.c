@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include "bloque.h"
+#include "via.h"
 
 int main() {
     printf("Hello, World!\n");
     bloque_t bloque;
+    via_t via;
+    via_init(&via, 10, 10);
     char *data = "holis";
-    bloque_init(&bloque, 8, 200, data, 1);
-    int tag = bloque_get_tag(&bloque);
-    char buffer[20];
-    bloque_get_data(&bloque, buffer, 20);
-    printf(buffer);
-    bloque_uninit(&bloque);
+    via_agregar_bloque(&via, 555, data);
+    via_uninit(&via);
     return 0;
 }
